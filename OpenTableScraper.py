@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import json
 import pymongo
 import datetime
+import selenium
+
 # try: 
 #     client = pymongo.MongoClient("mongodb://planitadmin:planitadmin123@ds011331.mlab.com:11331/heroku_kmsgdv8f?retryWrites=false")
 #     print("Connected successfully!!!") 
