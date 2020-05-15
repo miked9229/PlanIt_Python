@@ -30,7 +30,7 @@ for x in range(1, total_pages + 1):
 
     results = soup.find(id='main-page-content')
 
-
+    
     parks = results.find_all('article', class_= 'thumbnail-object')
 
     for park in parks:
