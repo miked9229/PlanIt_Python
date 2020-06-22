@@ -5,6 +5,9 @@ import pymongo
 import datetime
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
+options = Options()
+options.headless = True
 
 try: 
     client = pymongo.MongoClient("mongodb://planitadmin:planitadmin123@ds011331.mlab.com:11331/heroku_kmsgdv8f?retryWrites=false")
@@ -41,7 +44,7 @@ for x in range(1, total_pages + 1):
         address = park.find('p', class_='address')
         phone = park.find('div', class_='field field--name-field-phone-number field--type-string field--label-hidden field--item')
 
-        driver = webdriver.Firefox()
+        driver = webdriver.Firefox(options=options)
         driver.get(URL)
         elm = driver.find_element_by_xpath('//a[@href="'+name['href']+'"]')
         elm.click()
