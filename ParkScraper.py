@@ -8,8 +8,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 options = Options()
 options.headless = True
- 
-client = pymongo.MongoClient("mongodb+srv://planitadmin:GSEpFwQ6WNMNwxqv@cluster-kmsgdv8f.jyaej.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+import secrets 
+client = pymongo.MongoClient(secrets.connString)
  
 # database 
 db = client['TestingDatabase']
